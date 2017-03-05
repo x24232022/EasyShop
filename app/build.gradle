@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.fuicuiedu.xc.easyshop_20170206"
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    testCompile 'junit:junit:4.12'
+    //butterknife
+    compile 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    //圆形头像
+    compile 'com.pkmmte.view:circularimageview:1.1'
+    //okHttp
+    compile 'com.squareup.okhttp3:okhttp:3.6.0'
+    //日志拦截器
+    compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    //Gson
+    compile 'com.google.code.gson:gson:2.8.0'
+    //mosby。MVP
+    compile 'com.hannesdorfmann.mosby:mvp:2.0.1'
+    //图片裁剪的库
+    compile 'org.hybridsquad.android.photocropper:library:2.1.0'
+    //ImageLoader（用于图片加载）
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    //上拉刷新，下载加载的库
+    compile 'in.srain.cube:ptr-load-more:1.0.2'
+    //recyclerview
+    compile 'jp.wasabeef:recyclerview-animators:2.2.3'
+    //使用开源库CircleIndicator来实现ViewPager的圆点指示器
+    compile 'me.relex:circleindicator:1.2.1@aar'
+    //工具类
+    compile 'org.apache.commons:commons-lang3:3.4'
+    compile project(':apphx')
+
+
+}
